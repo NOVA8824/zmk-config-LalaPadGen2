@@ -59,6 +59,29 @@
         };
     };
 
+    macros {
+        k_mine: k_mine {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(T) &kp N1 &kp N0 &kp H &kp N7 &kp I &kp N3 &kp N2>;
+            label = "K_MINE";
+        };
+
+        mail_pr: mail_pr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp O &kp V &kp A &kp N8 &kp DOT &kp L &kp O &kp V &kp E &kp DOT &kp B &kp B &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "MAIL_PR";
+        };
+
+        mail_work: mail_work {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp O &kp B &kp A &kp T &kp A &kp MINUS &kp S &kp AT &kp A &kp Z &kp U &kp S &kp A &kp S &kp E &kp K &kp K &kp E &kp I &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
+            label = "MAIL_WORK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -104,13 +127,13 @@
         SYSTEM_LAYER {
             display-name = "system_layer";
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                   &out OUT_TOG                   &bt BT_SEL 0                   &bt BT_SEL 1                   &bt BT_SEL 2                   &bt BT_SEL 3
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10                  &sys_reset                     &bootloader                    &bt BT_CLR                     &bt BT_CLR_ALL                 &trans
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15                  &zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST
-&trans   &trans   &trans   &trans   &trans   &trans  &trans  &trans                         &trans                         &trans                         &trans                         &trans
-         &trans   &trans   &trans   &trans   &trans  &trans  &trans                         &trans                         &trans                         &trans
-&trans   &trans   &trans                                                                                                   &trans                         &trans                         &trans
-&trans   &trans   &trans   &trans   &trans                   &trans                         &trans                         &trans                         &trans                         &trans
+&trans   &trans   &mail_work  &mail_pr  &k_mine                  &out OUT_TOG                   &bt BT_SEL 0                   &bt BT_SEL 1                   &bt BT_SEL 2                   &bt BT_SEL 3
+&kp F6   &kp F7   &kp F8      &kp F9    &kp F10                  &sys_reset                     &bootloader                    &bt BT_CLR                     &bt BT_CLR_ALL                 &trans
+&kp F11  &kp F12  &kp F13     &kp F14   &kp F15                  &zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST
+&trans   &trans   &trans      &trans    &trans   &trans  &trans  &trans                         &trans                         &trans                         &trans                         &trans
+         &trans   &trans      &trans    &trans   &trans  &trans  &trans                         &trans                         &trans                         &trans
+&trans   &trans   &trans                                                                                                       &trans                         &trans                         &trans
+&trans   &trans   &trans      &trans    &trans                   &trans                         &trans                         &trans                         &trans                         &trans
             >;
         };
     };
